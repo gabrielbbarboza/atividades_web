@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Agendamento</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="main-title">Agendamento</h1>
+
+        <% if (erros) { %>
+            <div class="error-box">
+                <ul> <% erros.forEach(erro => { %> <li><%= erro %></li> <% }) %> </ul>
+            </div>
+        <% } %>
+
+        <form action="/agendamento" method="POST">
+            <section>
+                <h2>Dados do paciente</h2>
+                <div class="row">
+                    <div class="col"><label>Nome</label><input type="text" name="nome" value="<%= dados.nome || '' %>"></div>
+                    <div class="col"><label>Sobrenome</label><input type="text" name="sobrenome" value="<%= dados.sobrenome || '' %>"></div>
+                </div>
+                <div class="row">
+                    <div class="col"><label>CPF</label><input type="text" name="cpf" value="<%= dados.cpf || '' %>"></div>
+                    <div class="col"><label>Data de nascimento</label><input type="text" name="nascimento" value="<%= dados.nascimento || '' %>"></div>
+                </div>
+                <div class="row">
+                    <div class="col"><label>Telefone</label><input type="text" name="telefone" value="<%= dados.telefone || '' %>"></div>
+                    <div class="col"><label>CEP</label><input type="text" name="cep" value="<%= dados.cep || '' %>"></div>
+                </div>
+                <div class="row">
+                    <div class="col"><label>Endereço</label><input type="text" name="endereco" value="<%= dados.endereco || '' %>"></div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Dados da consulta</h2>
+                <div class="row">
+                    <div class="col"><label>Clínica</label><input type="text" name="clinica" value="<%= dados.clinica || '' %>"></div>
+                    <div class="col"><label>Especialidade</label><input type="text" name="especialidade" value="<%= dados.especialidade || '' %>"></div>
+                </div>
+                <div class="row">
+                    <div class="col"><label>Data</label><input type="text" name="data" value="<%= dados.data || '' %>"></div>
+                    <div class="col"><label>Hora</label><input type="text" name="hora" value="<%= dados.hora || '' %>"></div>
+                </div>
+                <div class="row">
+                    <div class="col"><label>Observação</label><textarea name="observacao" rows="4"><%= dados.observacao || '' %></textarea></div>
+                </div>
+            </section>
+
+            <button type="submit" class="btn-submit">Enviar</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Consulta Agendada</title>
+</head>
+<body>
+    <h1>Dados do Agendamento</h1>
+    <hr>
+    <h3>Paciente</h3>
+    <p><strong>Nome:</strong> <%= dados.nome %> <%= dados.sobrenome %></p>
+    <p><strong>CPF:</strong> <%= dados.cpf %></p>
+    <p><strong>Endereço:</strong> <%= dados.endereco %></p>
+
+    <h3>Consulta</h3>
+    <p><strong>Clínica:</strong> <%= dados.clinica %> - <%= dados.especialidade %></p>
+    <p><strong>Data/Hora:</strong> <%= dados.data %> às <%= dados.hora %></p>
+    <p><strong>Observação:</strong> <%= dados.observacao || 'Nenhuma' %></p>
+    
+    <a href="/">Voltar</a>
+</body>
+</html>
